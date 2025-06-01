@@ -2,33 +2,64 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>О проекте</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Добавляем стили карточки, если они не объявлены в style.css */
+    .info-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 6px;
+      padding: 20px;
+      margin-top: 20px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="container header">
+  <header class="site-header">
+    <div class="header">
       <h1><a href="index.html">Афиша независимых театров</a></h1>
+      <nav class="nav-inner">
+        <a href="index.html">Главная</a>
+        <a href="repertoire.html">Афиша</a>
+        <a href="theatres.html">Театры</a>
+        <a href="about.html" class="active">О проекте</a>
+      </nav>
       <input type="text" placeholder="Поиск спектаклей..." />
     </div>
   </header>
 
-  <nav class="nav-menu container">
-    <a href="index.html">Главная</a>
-    <a href="repertoire.html">Афиша</a>
-    <a href="theatres.html">Театры</a>
-    <a href="about.html">О проекте</a>
-  </nav>
-
   <main class="container">
-    <h2>О проекте</h2>
-    <p>Этот сайт создан в рамках курсовой работы и посвящён афише независимых театров. Он помогает зрителям находить интересные спектакли, знакомиться с молодыми коллективами и планировать культурный досуг.</p>
-    <p>Автор проекта: [Твоё имя]</p>
+    <h2 class="afisha-banner-title">О проекте</h2>
+    <section class="info-card">
+      <p>Этот сайт создан в рамках курсовой работы и посвящён афише независимых театров. Он помогает зрителям находить интересные спектакли, знакомиться с молодыми коллективами и планировать культурный досуг.</p>
+      <p>Автор проекта: [Твоё имя]</p>
+    </section>
   </main>
 
-  <footer class="container">
-    <p>&copy; 2025 Афиша независимых театров. Все права защищены.</p>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Афиша независимых театров. Все права защищены.</p>
+      <nav class="footer-nav">
+        <a href="index.html">Главная</a>
+        <a href="repertoire.html">Афиша</a>
+        <a href="theatres.html">Театры</a>
+        <a href="about.html">О проекте</a>
+      </nav>
+      <div class="footer-contact">
+        <p>Контактная почта: <a href="mailto:info@indietheatre.ru">info@indietheatre.ru</a></p>
+        <p><a href="#">Политика конфиденциальности</a> | <a href="#">Условия использования</a></p>
+      </div>
+      <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="scroll-top">Наверх ↑</button>
+    </div>
   </footer>
 </body>
 </html>

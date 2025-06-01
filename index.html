@@ -7,68 +7,162 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="container header">
-      <h1>Афиша независимых театров</h1>
+  <header class="site-header">
+    <div class="header">
+      <h1><a href="index.html">Афиша независимых театров</a></h1>
+
+      <nav class="nav-inner">
+        <a href="index.html" class="active">Главная</a>
+        <a href="repertoire.html">Афиша</a>
+        <a href="theatres.html">Театры</a>
+        <a href="about.html">О проекте</a>
+      </nav>
+
       <input type="text" placeholder="Поиск спектаклей..." />
     </div>
   </header>
 
- <nav class="nav-menu container">
-    <a href="index.html">Главная</a>
-    <a href="repertoire.html">Афиша</a>
-    <a href="theatres.html">Театры</a>
-    <a href="about.html">О проекте</a>
-  </nav>
 
-  <section class="banner">
-    <img src="images/groza.png" alt="Гроза" />
-    <div class="banner-text">
-      <h2>Гроза</h2>
-      <p>Театр на Окраине</p>
-      <p>27 апреля, 19:00</p>
-      <a href="#" class="button">Купить билет</a>
+
+  <section class="banner-slider">
+    <div class="slide active">
+      <img src="images/banner1.png" alt="Афиша 1" />
+      <div class="banner-text">
+        <div class="container">
+          <h2>РАСПИСАНИЕ СПЕКТАКЛЕЙ</h2>
+          <p>События недели в независимых театрах</p>
+          <a href="repertoire.html" class="button">Смотреть афишу</a>
+        </div>
+      </div>
     </div>
+    <div class="slide">
+      <img src="images/banner2.png" alt="Афиша 2" />
+      <div class="banner-text">
+        <div class="container">
+          <h2>ТЕАТРАЛЬНЫЙ ВЕЧЕР</h2>
+          <p>Лучшие постановки сезона</p>
+          <a href="repertoire.html" class="button">Смотреть афишу</a>
+        </div>
+      </div>
+    </div>
+
+    <button class="slider-btn prev">&#10094;</button>
+    <button class="slider-btn next">&#10095;</button>
   </section>
+
+
 
   <section class="afisha">
     <div class="container">
       <h3>Афиша на неделю</h3>
       <div class="cards">
         <div class="card">
-          <img src="images/chaika.jpg" alt="Чайка" />
-          <div class="card-info">
-            <h4>Чайка</h4>
-            <p>Драма</p>
-            <p>24 апреля, 19:00</p>
-          </div>
+          <a href="show-chayka.html" class="card">
+            <img src="images/2.png" alt="Чайка" />
+            <div class="card-info">
+              <h4>Чайка</h4>
+              <p>Драма</p>
+              <p>24 апреля, 19:00</p>
+            </div>
+          </a>
         </div>
         <div class="card">
-          <img src="images/saltan.jpg" alt="Сказка о царе Салтане" />
-          <div class="card-info">
-            <h4>Сказка о царе Салтане</h4>
-            <p>Сказка</p>
-            <p>25 апреля, 12:00</p>
-          </div>
+          <a href="play2.html" class="card">
+            <img src="images/3.png" alt="Сказка о царе Салтане" />
+            <div class="card-info">
+              <h4>Сказка о царе Салтане</h4>
+              <p>Сказка</p>
+              <p>25 апреля, 12:00</p>
+            </div>
+          </a>
         </div>
         <div class="card">
-          <img src="images/revizor.jpg" alt="Ревизор" />
-          <div class="card-info">
-            <h4>Ревизор</h4>
-            <p>Комедия</p>
-            <p>26 апреля, 19:30</p>
-          </div>
+          <a href="play3.html" class="card">
+            <img src="images/4.png" alt="Ревизор" />
+            <div class="card-info">
+              <h4>Ревизор</h4>
+              <p>Комедия</p>
+              <p>26 апреля, 19:30</p>
+            </div>
+          </a>
         </div>
         <div class="card">
-          <img src="images/prenakaz.jpg" alt="Преступление и наказание" />
-          <div class="card-info">
-            <h4>Преступление и наказание</h4>
-            <p>Драма</p>
-            <p>28 апреля, 18:00</p>
-          </div>
+          <a href="play4.html" class="card">
+            <img src="images/prenakaz.jpg" alt="Преступление и наказание" />
+            <div class="card-info">
+              <h4>Преступление и наказание</h4>
+              <p>Драма</p>
+              <p>28 апреля, 18:00</p>
+            </div>
+          </a>
         </div>
+      </div>
+      <div class="afisha-button-wrap">
+        <a href="repertoire.html" class="afisha-button afisha-button:hover">Смотреть всю афишу</a>
       </div>
     </div>
   </section>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 Афиша независимых театров</p>
+    <p>Проект выполнен в рамках курса «Web-программирование», 2 курс</p>
+
+    <nav class="footer-nav">
+      <a href="index.html">Главная</a>
+      <a href="repertoire.html">Афиша</a>
+      <a href="theatres.html">Театры</a>
+      <a href="about.html">О проекте</a>
+    </nav>
+
+    <div class="footer-contact">
+      <p>Контактная почта: <a href="mailto:info@indietheatre.ru">info@indietheatre.ru</a></p>
+      <p><a href="#">Политика конфиденциальности</a> | <a href="#">Условия использования</a></p>
+    </div>
+
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="scroll-top">Наверх ↑</button>
+  </div>
+</footer>
+
+
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const prevBtn = document.querySelector('.slider-btn.prev');
+  const nextBtn = document.querySelector('.slider-btn.next');
+  let current = 0;
+  let interval = setInterval(showNextSlide, 5000);
+
+  function showSlide(index) {
+    slides[current].classList.remove('active');
+    current = (index + slides.length) % slides.length; // защита от выхода за границы
+    slides[current].classList.add('active');
+  }
+
+  function showNextSlide() {
+    showSlide(current + 1);
+  }
+
+  function showPrevSlide() {
+    showSlide(current - 1);
+  }
+
+  nextBtn.addEventListener('click', () => {
+    showNextSlide();
+    resetInterval();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    showPrevSlide();
+    resetInterval();
+  });
+
+  function resetInterval() {
+    clearInterval(interval);
+    interval = setInterval(showNextSlide, 5000);
+  }
+</script>
+
+
 </body>
 </html>

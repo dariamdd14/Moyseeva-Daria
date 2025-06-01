@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{название_театра}} — театр</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header">
+      <h1><a href="index.html">Афиша независимых театров</a></h1>
+      <nav class="nav-inner">
+        <a href="index.html">Главная</a>
+        <a href="repertoire.html">Афиша</a>
+        <a href="theatres.html">Театры</a>
+        <a href="about.html">О проекте</a>
+      </nav>
+      <input type="text" placeholder="Поиск театров..." />
+    </div>
+  </header>
+
+  <main class="container" style="margin-top: 40px; margin-bottom: 40px;">
+    <div class="play-row" style="grid-template-columns: 250px 1fr; gap: 40px;">
+      <img src="{{путь_к_логотипу_или_фото}}" alt="{{название_театра}}" class="play-img" style="width: 100%; max-width: 250px; height: auto; border-radius: 8px;" />
+
+      <div class="play-info">
+        <h2 class="play-title">{{название_театра}}</h2>
+
+        <div class="play-meta">
+          <p><strong>Город:</strong> {{город}}</p>
+          <p><strong>Адрес:</strong> {{адрес}}</p>
+          <p><strong>Контакты:</strong> {{контакты}}</p>
+          <p><strong>Веб-сайт:</strong> <a href="{{сайт}}" target="_blank">{{сайт}}</a></p>
+        </div>
+
+        <p class="play-description">
+          {{описание_театра}}
+        </p>
+
+        <section class="afisha theatre-repertoire">
+          <div class="container">
+            <h3>Текущий репертуар</h3>
+            <div class="cards">
+              <div class="card">
+                <a href="show-chayka.html" class="card">
+                  <img src="images/2.png" alt="Чайка" />
+                  <div class="card-info">
+                    <h4>Чайка</h4>
+                    <p>Драма</p>
+                    <p>24 апреля, 19:00</p>
+                  </div>
+                </a>
+              </div>
+              <div class="card">
+                <a href="play2.html" class="card">
+                  <img src="images/3.png" alt="Сказка о царе Салтане" />
+                  <div class="card-info">
+                    <h4>Сказка о царе Салтане</h4>
+                    <p>Сказка</p>
+                    <p>25 апреля, 12:00</p>
+                  </div>
+                </a>
+              </div>
+              <div class="card">
+                <a href="play3.html" class="card">
+                  <img src="images/4.png" alt="Ревизор" />
+                  <div class="card-info">
+                    <h4>Ревизор</h4>
+                    <p>Комедия</p>
+                    <p>26 апреля, 19:30</p>
+                  </div>
+                </a>
+              </div>
+              <div class="card">
+                <a href="play4.html" class="card">
+                  <img src="images/prenakaz.jpg" alt="Преступление и наказание" />
+                  <div class="card-info">
+                    <h4>Преступление и наказание</h4>
+                    <p>Драма</p>
+                    <p>28 апреля, 18:00</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="back-button-wrap" style="text-align: right; margin: 20px 0;">
+          <a href="theatres.html" class="back-button">← Назад к театрам</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Афиша независимых театров</p>
+      <p>Проект выполнен в рамках курса «Web-программирование», 2 курс</p>
+
+      <nav class="footer-nav">
+        <a href="index.html">Главная</a>
+        <a href="repertoire.html">Афиша</a>
+        <a href="theatres.html">Театры</a>
+        <a href="about.html">О проекте</a>
+      </nav>
+
+      <div class="footer-contact">
+        <p>Контактная почта: <a href="mailto:info@indietheatre.ru">info@indietheatre.ru</a></p>
+        <p><a href="#">Политика конфиденциальности</a> | <a href="#">Условия использования</a></p>
+      </div>
+
+      <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="scroll-top">Наверх ↑</button>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -7,32 +7,106 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="container header">
+  <header class="site-header">
+    <div class="header">
       <h1><a href="index.html">Афиша независимых театров</a></h1>
+
+      <nav class="nav-inner">
+        <a href="index.html">Главная</a>
+        <a href="repertoire.html">Афиша</a>
+        <a href="theatres.html" class="active">Театры</a>
+        <a href="about.html">О проекте</a>
+      </nav>
+
       <input type="text" placeholder="Поиск спектаклей..." />
     </div>
   </header>
 
-  <nav class="nav-menu container">
-    <a href="index.html">Главная</a>
-    <a href="repertoire.html">Афиша</a>
-    <a href="theatres.html">Театры</a>
-    <a href="about.html">О проекте</a>
-  </nav>
-
+  
   <main class="container">
-    <h2>Театры</h2>
-    <ul class="theatre-list">
-      <li><strong>Театр Свободы</strong> — современный драматический театр с экспериментальными постановками.</li>
-      <li><strong>Театр на Окраине</strong> — камерные спектакли и классика в новом прочтении.</li>
-      <li><strong>Театр Комиксов</strong> — лёгкие комедии и импровизация на злобу дня.</li>
-      <li><strong>Детский театр «Фантазия»</strong> — волшебные сказки для детей и взрослых.</li>
-    </ul>
+    <h2 class="afisha-banner-title">Театры</h2>
+
+    <div class="search-block">
+      <input type="text" id="mainSearch" placeholder="Поиск театров..." />
+    </div>
+
+      <div class="theatre-grid">
+        <div class="theatre-card">
+          <img src="images/banner1.png" alt="Театр Свободы">
+          <div class="theatre-info">
+            <h3>Театр Свободы</h3>
+            <p>Современный драматический театр с экспериментальными постановками.</p>
+            <a href="pageteatre.html" class="button">Подробнее</a>
+          </div>
+        </div>
+
+        <div class="theatre-card">
+          <img src="images/banner1.png" alt="Театр на Окраине">
+          <div class="theatre-info">
+            <h3>Театр на Окраине</h3>
+            <p>Камерные спектакли и классика в новом прочтении.</p>
+            <a href="theatre-okraina.html" class="button">Подробнее</a>
+          </div>
+        </div>
+
+        <div class="theatre-card">
+          <img src="images/banner1.png" alt="Театр Комиксов">
+          <div class="theatre-info">
+            <h3>Театр Комиксов</h3>
+            <p>Лёгкие комедии и импровизация на злобу дня.</p>
+            <a href="theatre-comics.html" class="button">Подробнее</a>
+          </div>
+        </div>
+
+        <div class="theatre-card">
+          <img src="images/banner1.png" alt="Фантазия">
+          <div class="theatre-info">
+            <h3>Детский театр «Фантазия»</h3>
+            <p>Волшебные сказки для детей и взрослых.</p>
+            <a href="theatre-fantasy.html" class="button">Подробнее</a>
+          </div>
+        </div>
+      </div>
   </main>
 
-  <footer class="container">
-    <p>&copy; 2025 Афиша независимых театров. Все права защищены.</p>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Афиша независимых театров</p>
+      <p>Проект выполнен в рамках курса «Web-программирование», 2 курс</p>
+
+      <nav class="footer-nav">
+        <a href="index.html">Главная</a>
+        <a href="repertoire.html">Афиша</a>
+        <a href="theatres.html">Театры</a>
+        <a href="about.html">О проекте</a>
+      </nav>
+
+      <div class="footer-contact">
+        <p>Контактная почта: <a href="mailto:info@indietheatre.ru">info@indietheatre.ru</a></p>
+        <p><a href="#">Политика конфиденциальности</a> | <a href="#">Условия использования</a></p>
+      </div>
+
+      <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="scroll-top">Наверх ↑</button>
+    </div>
   </footer>
+
+  <script>
+    const searchInputs = [document.getElementById('theatreSearch'), document.getElementById('mainSearch')];
+    const theatreCards = document.querySelectorAll('.theatre-card');
+
+    searchInputs.forEach(input => {
+      input?.addEventListener('input', () => {
+        const query = searchInputs.map(i => i?.value.toLowerCase()).join(' ').trim();
+
+        theatreCards.forEach(card => {
+          const title = card.querySelector('h3').textContent.toLowerCase();
+          const description = card.querySelector('p').textContent.toLowerCase();
+          const matches = title.includes(query) || description.includes(query);
+          card.style.display = matches ? 'block' : 'none';
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>

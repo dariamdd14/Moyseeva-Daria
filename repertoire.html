@@ -7,52 +7,267 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="container header">
+  <header class="site-header">
+    <div class="header">
       <h1><a href="index.html">Афиша независимых театров</a></h1>
+      <nav class="nav-inner">
+        <a href="index.html">Главная</a>
+        <a href="repertoire.html" class="active">Афиша</a>
+        <a href="theatres.html">Театры</a>
+        <a href="about.html">О проекте</a>
+      </nav>
       <input type="text" placeholder="Поиск спектаклей..." />
     </div>
   </header>
 
-  <nav class="nav-menu container">
-    <a href="index.html">Главная</a>
-    <a href="repertoire.html">Афиша</a>
-    <a href="theatres.html">Театры</a>
-    <a href="about.html">О проекте</a>
-  </nav>
-
   <main class="container">
-    <h2>Афиша на неделю</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="images/chaika.jpg" alt="Чайка" />
-        <div class="card-info">
-          <h4>Чайка</h4>
-          <p>24 апреля, 19:00</p>
-          <p>Театр Свободы</p>
+    <div class="afisha-banner-title">Афиша</div>
+      <div class="filter-bar">
+        <div class="filters-inline">
+          <label>Жанр:
+            <select id="genre">
+              <option value="all">Все</option>
+              <option value="Драма">Драма</option>
+              <option value="Комедия">Комедия</option>
+              <option value="Сказка">Сказка</option>
+            </select>
+          </label>
+
+          <label>Месяц:
+            <select id="month">
+              <option value="all">Все</option>
+              <option value="Апрель">Апрель</option>
+              <option value="Май">Май</option>
+              <option value="Июнь">Июнь</option>
+            </select>
+          </label>
+
+          <label>День недели:
+            <select id="weekday">
+              <option value="all">Все</option>
+              <option value="Пн">Пн</option>
+              <option value="Вт">Вт</option>
+              <option value="Ср">Ср</option>
+              <option value="Чт">Чт</option>
+              <option value="Пт">Пт</option>
+              <option value="Сб">Сб</option>
+              <option value="Вс">Вс</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="search-inline">
+          <input type="text" id="searchInput" placeholder="Поиск по названию...">
         </div>
       </div>
-      <div class="card">
-        <img src="images/saltan.jpg" alt="Сказка о царе Салтане" />
-        <div class="card-info">
-          <h4>Сказка о царе Салтане</h4>
-          <p>25 апреля, 12:00</p>
-          <p>Детский театр «Фантазия»</p>
-        </div>
+
+
+    <div id="noResults" style="display: none; text-align: center; margin-top: 20px; font-size: 18px; color: #888;">
+      Ничего не найдено 😢
+    </div>
+
+    <div class="play-row" data-genre="Мюзикл" data-date="2025-06-05">
+      <div class="play-date-block">
+        <div class="play-day">05</div>
+        <div class="play-month">Июнь</div>
+        <div class="play-weekday">Чт</div>
+        <div class="play-age">12+</div>
       </div>
-      <div class="card">
-        <img src="images/revizor.jpg" alt="Ревизор" />
-        <div class="card-info">
-          <h4>Ревизор</h4>
-          <p>26 апреля, 19:30</p>
-          <p>Театр Комиксов</p>
+
+      <img src="images/1.png" alt="Фауст" class="play-img">
+
+      <div class="play-info">
+        <h3 class="play-title">Мюзикл FAUST</h3>
+        <p class="play-description">
+          Театр LDM. Новая сцена представляет МИРОВАЯ ПРЕМЬЕРА МЮЗИКЛА «ФАУСТ». 
+          Вы узнаете, какими были Воланд и Маргарита четыре века назад! Мюзикл...
+        </p>
+        <a href="faust.html" class="read-more">Читать дальше →</a>
+      </div>
+
+      <div class="play-button-wrap">
+        <a href="buy.html" class="buy-button">Купить билет</a>
+      </div>
+    </div>
+
+    <div class="play-row" data-genre="ЖАНР" data-date="2025-06-08">
+      <div class="play-date-block">
+        <div class="play-day">08</div>
+        <div class="play-month">Июнь</div>
+        <div class="play-weekday">Вс</div>
+      </div>
+
+      <img src="images/1.png" alt="НАЗВАНИЕ" class="play-img">
+
+      <div class="play-info">
+        <h3 class="play-title">НАЗВАНИЕ</h3>
+        <p class="play-description">Краткое описание спектакля: жанр, театр, дата.</p>
+      </div>
+
+      <div class="play-button-wrap">
+        <a href="ПУТЬ_К_СТРАНИЦЕ.html" class="buy-button">Купить билет</a>
+      </div>
+    </div>
+
+    <div class="play-row" data-genre="Драма" data-date="2025-06-08">
+      <div class="play-date-block">
+        <div class="play-day">08</div>
+        <div class="play-month">Июнь</div>
+        <div class="play-weekday">Вс</div>
+      </div>
+
+      <img src="images/2.png" alt="Чайка" class="play-img">
+
+      <div class="play-info">
+        <h3 class="play-title">Чайка</h3>
+        <p class="play-description">Драма. Постановка Театра Свободы.</p>
+      </div>
+
+      <div class="play-button-wrap">
+        <a href="show-chayka.html" class="buy-button">Купить билет</a>
+      </div>
+    </div>
+
+
+
+    <div class="play-row"
+      data-genre="Сказка"
+      data-date="2025-04-25">
+      <div class="play-date-block">
+        <div class="play-day">25</div>
+        <div class="play-month">апреля</div>
+        <div class="play-weekday">Вт</div>
+      </div>
+
+      <img src="images/3.png" alt="Сказка о царе Салтане" class="play-img" />
+
+      <div class="play-info">
+        <h3 class="play-title">Сказка о царе Салтане</h3>
+        <p class="play-description">Сказка. 25 апреля, 12:00 • Детский театр «Фантазия»</p>
+      </div>
+
+      <div class="play-button-wrap">
+        <a href="play3.html" class="buy-button">Купить билет</a>
+      </div>
+    </div>
+
+
+      <div class="play-row"
+          data-genre="Комедия"
+          data-month="Апрель"
+          data-weekday="Пт">
+        <div class="play-date-block">
+          <div class="play-day">26</div>
+          <div class="play-month">Апрель</div>
+          <div class="play-weekday">Пт</div>
+        </div>
+        <img src="images/revizor.jpg" alt="Ревизор" class="play-img">
+        <div class="play-info">
+          <h3 class="play-title">Ревизор</h3>
+          <p class="play-description">Комедия. 26 апреля, 19:30 • Театр Комиксов</p>
+        </div>
+        <div class="play-button-wrap">
+          <a href="play3.html" class="buy-button">Купить билет</a>
         </div>
       </div>
     </div>
   </main>
 
-  <footer class="container">
-    <p>&copy; 2025 Афиша независимых театров. Все права защищены.</p>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Афиша независимых театров</p>
+      <p>Проект выполнен в рамках курса «Web-программирование», 2 курс</p>
+
+      <nav class="footer-nav">
+        <a href="index.html">Главная</a>
+        <a href="repertoire.html">Афиша</a>
+        <a href="theatres.html">Театры</a>
+        <a href="about.html">О проекте</a>
+      </nav>
+
+      <div class="footer-contact">
+        <p>Контактная почта: <a href="mailto:info@indietheatre.ru">info@indietheatre.ru</a></p>
+        <p><a href="#">Политика конфиденциальности</a> | <a href="#">Условия использования</a></p>
+      </div>
+
+      <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="scroll-top">Наверх ↑</button>
+    </div>
   </footer>
+
+  <script>
+    const genreSelect = document.getElementById('genre');
+    const monthSelect = document.getElementById('month');
+    const weekdaySelect = document.getElementById('weekday');
+    const rows = document.querySelectorAll('.play-row');
+
+    // Вспомогательные массивы
+    const months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+    const weekdays = ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
+
+    function extractDateParts(dateString) {
+      const date = new Date(dateString);
+      return {
+        month: months[date.getMonth()],
+        weekday: weekdays[date.getDay()]
+      };
+    }
+
+    function filterPlays() {
+      const selectedGenre = genreSelect.value;
+      const selectedMonth = monthSelect.value;
+      const selectedWeekday = weekdaySelect.value;
+
+      rows.forEach(row => {
+        const genre = row.dataset.genre;
+        const dateStr = row.dataset.date;
+
+        const { month, weekday } = extractDateParts(dateStr);
+
+        const matchGenre = selectedGenre === "all" || genre === selectedGenre;
+        const matchMonth = selectedMonth === "all" || month === selectedMonth;
+        const matchWeekday = selectedWeekday === "all" || weekday === selectedWeekday;
+
+        row.style.display = (matchGenre && matchMonth && matchWeekday) ? "grid" : "none";
+      });
+    }
+
+    genreSelect.addEventListener("change", filterPlays);
+    monthSelect.addEventListener("change", filterPlays);
+    weekdaySelect.addEventListener("change", filterPlays);
+    
+    const searchInput = document.getElementById("searchInput");
+    const noResults = document.getElementById("noResults");
+
+    function filterPlays() {
+      const selectedGenre = genreSelect.value;
+      const selectedMonth = monthSelect.value;
+      const selectedWeekday = weekdaySelect.value;
+      const searchValue = searchInput.value.trim().toLowerCase();
+
+      let visibleCount = 0;
+
+      rows.forEach(row => {
+        const genre = row.dataset.genre;
+        const dateStr = row.dataset.date;
+        const title = row.querySelector(".play-title")?.textContent.toLowerCase() || "";
+
+        const { month, weekday } = extractDateParts(dateStr);
+
+        const matchGenre = selectedGenre === "all" || genre === selectedGenre;
+        const matchMonth = selectedMonth === "all" || month === selectedMonth;
+        const matchWeekday = selectedWeekday === "all" || weekday === selectedWeekday;
+        const matchSearch = title.includes(searchValue);
+
+        const show = matchGenre && matchMonth && matchWeekday && matchSearch;
+
+        row.style.display = show ? "grid" : "none";
+        if (show) visibleCount++;
+      });
+
+      noResults.style.display = visibleCount === 0 ? "block" : "none";
+    }
+
+    searchInput.addEventListener("input", filterPlays);
+  </script>
 </body>
 </html>

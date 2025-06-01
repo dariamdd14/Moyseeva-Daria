@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{название}} — спектакль</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header">
+      <h1><a href="index.html">Афиша независимых театров</a></h1>
+      <nav class="nav-inner">
+        <a href="index.html">Главная</a>
+        <a href="repertoire.html">Афиша</a>
+        <a href="theatres.html">Театры</a>
+        <a href="about.html">О проекте</a>
+      </nav>
+      <input type="text" placeholder="Поиск спектаклей..." />
+    </div>
+  </header>
+
+  <main class="container" style="margin-top: 40px; margin-bottom: 40px;">
+    <div class="play-row" style="grid-template-columns: 250px 1fr; gap: 40px;">
+      <img src="{{путь_к_изображению}}" alt="{{название}}" class="play-img" style="width: 100%; max-width: 250px; height: auto; border-radius: 8px;" />
+
+      <div class="play-info">
+        <h2 class="play-title">{{название}}</h2>
+
+        <div class="play-meta">
+          <p><strong>Жанр:</strong> {{жанр}}</p>
+          <p><strong>Дата и время:</strong> {{дата}}, {{время}}</p>
+          <p><strong>Место:</strong> {{место}}</p>
+        </div>
+
+        <p class="play-description">
+          {{описание}}
+        </p>
+
+        <div class="play-button-wrap">
+          <a href="{{ссылка_на_билеты}}" class="buy-button">Купить билет</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Афиша независимых театров</p>
+      <p>Проект выполнен в рамках курса «Web-программирование», 2 курс</p>
+
+      <nav class="footer-nav">
+        <a href="index.html">Главная</a>
+        <a href="repertoire.html">Афиша</a>
+        <a href="theatres.html">Театры</a>
+        <a href="about.html">О проекте</a>
+      </nav>
+
+      <div class="footer-contact">
+        <p>Контактная почта: <a href="mailto:info@indietheatre.ru">info@indietheatre.ru</a></p>
+        <p><a href="#">Политика конфиденциальности</a> | <a href="#">Условия использования</a></p>
+      </div>
+
+      <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="scroll-top">Наверх ↑</button>
+    </div>
+  </footer>
+
+</body>
+</html>
