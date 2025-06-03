@@ -18,10 +18,18 @@
         <a href="about.html">О проекте</a>
       </nav>
 
+      <button class="burger" id="burger" aria-label="Открыть меню">
+        <svg viewBox="0 0 100 80" width="30" height="30" fill="white">
+          <rect width="100" height="10"></rect>
+          <rect y="30" width="100" height="10"></rect>
+          <rect y="60" width="100" height="10"></rect>
+        </svg>
+      </button>
+
+
       <input type="text" placeholder="Поиск спектаклей..." />
     </div>
   </header>
-
 
 
   <section class="banner-slider">
@@ -42,6 +50,17 @@
           <h2>ТЕАТРАЛЬНЫЙ ВЕЧЕР</h2>
           <p>Лучшие постановки сезона</p>
           <a href="repertoire.html" class="button">Смотреть афишу</a>
+        </div>
+      </div>
+    </div>
+        <div class="slide">
+      <img src="groza.png" alt="Гроза" />
+      <div class="banner-text">
+        <div class="container">
+          <h2>ГРОЗА</h2>
+          <p>Театр на Окраине</p>
+          <p>27 апреля, 19:00</p>
+          <a href="groza.html" class="button">Купить билет</a>
         </div>
       </div>
     </div>
@@ -67,7 +86,7 @@
           </a>
         </div>
         <div class="card">
-          <a href="play2.html" class="card">
+          <a href="skazka.html" class="card">
             <img src="images/3.png" alt="Сказка о царе Салтане" />
             <div class="card-info">
               <h4>Сказка о царе Салтане</h4>
@@ -77,7 +96,7 @@
           </a>
         </div>
         <div class="card">
-          <a href="play3.html" class="card">
+          <a href="revizor.html" class="card">
             <img src="images/4.png" alt="Ревизор" />
             <div class="card-info">
               <h4>Ревизор</h4>
@@ -87,8 +106,8 @@
           </a>
         </div>
         <div class="card">
-          <a href="play4.html" class="card">
-            <img src="images/prenakaz.jpg" alt="Преступление и наказание" />
+          <a href="prenakaz.html" class="card">
+            <img src="images/prenakaz.png" alt="Преступление и наказание" />
             <div class="card-info">
               <h4>Преступление и наказание</h4>
               <p>Драма</p>
@@ -116,7 +135,7 @@
     </nav>
 
     <div class="footer-contact">
-      <p>Контактная почта: <a href="mailto:info@indietheatre.ru">info@indietheatre.ru</a></p>
+      <p>Контактная почта: <a href="mailto:darya.moyseeva@yandex.ru">darya.moyseeva@yandex.ru</a></p>
       <p><a href="#">Политика конфиденциальности</a> | <a href="#">Условия использования</a></p>
     </div>
 
@@ -127,6 +146,20 @@
 
 
 <script>
+  const burger = document.getElementById('burger');
+  const nav = document.querySelector('.nav-inner');
+  const navLinks = nav.querySelectorAll('a');
+
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('show');
+  });
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('show');
+    });
+  });
+
   const slides = document.querySelectorAll('.slide');
   const prevBtn = document.querySelector('.slider-btn.prev');
   const nextBtn = document.querySelector('.slider-btn.next');
